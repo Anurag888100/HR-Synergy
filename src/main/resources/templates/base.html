@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" th:fragment="layout(content)">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+<link rel="icon" type="image/jpeg" th:href="@{/images/logo.jpeg}">
+<title>HR Synergy</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" th:href="@{/css/header$footer.css}">
+
+<link rel="stylesheet" th:href="@{/css/login.css}">
+<link rel="stylesheet" th:href="@{/css/adminlogin.css}">
+<link rel="stylesheet" th:href="@{/css/aboutus.css}">
+<link rel="stylesheet" th:href="@{/css/contactus.css}">
+<link rel="stylesheet" th:href="@{/css/dashboard.css}">
+<link rel="stylesheet" th:href="@{/css/registration.css}">
+<link rel="stylesheet" th:href="@{/css/joinus.css}">
+<link rel="stylesheet" th:href="@{/css/addemployee.css}">
+<link rel="stylesheet" th:href="@{/css/jobs.css}">
+<link rel="stylesheet" th:href="@{/css/giveresponse.css}">
+<link rel="stylesheet" th:href="@{/css/index.css}">
+ <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+
+<body style="background:#f4f8ff;">
+
+<!-- ================= HEADER ================= -->
+
+<nav class="navbar navbar-expand-lg bg-white shadow-sm py-3">
+
+<div class="container">
+
+<!-- Logo -->
+
+<a class="navbar-brand d-flex align-items-center" href="/">
+
+<img th:src="@{/images/logo.jpeg}"
+     alt="HR Synergy Logo"
+     width="60"
+     height="60">
+
+<div>
+
+<h4 class="m-0 fw-bold text-primary">
+HR Synergy
+</h4>
+
+<small class="text-secondary">
+HR Management System
+</small>
+
+</div>
+
+</a>
+
+<!-- Mobile Toggle -->
+
+<button class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#navbar">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<!-- Navbar -->
+
+<div class="collapse navbar-collapse"
+id="navbar">
+
+<ul class="navbar-nav mx-auto">
+
+<li class="nav-item">
+<a class="nav-link px-3 fw-semibold" href="/">HOME</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link px-3 fw-semibold"  th:href="@{/jobs}">JOBS</a></li>
+
+<li class="nav-item">
+    <a class="nav-link" th:href="@{/joinus}">
+        <b>JOIN US</b>
+    </a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link px-3 fw-semibold" href="/aboutus">ABOUT</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link px-3 fw-semibold" href="/contactus">CONTACT</a>
+</li>
+
+</ul>
+
+<a th:href="@{/login}" class="btn btn-primary">
+    <i class="fa-solid fa-right-to-bracket me-2"></i>
+    Login
+</a>
+
+<a th:href="@{/registration}" class="btn btn-primary mx-1">
+    <i class="fa-solid fa-right-to-bracket me-2"></i>
+    Register
+</a>
+
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- ================= MAIN ================= -->
+
+<main th:replace="${content}"></main>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="mt-5 text-white"
+style="background:#111827; border-top:4px solid #2563eb;">
+
+<div class="container py-5">
+
+<div class="row">
+
+<!-- Column 1 -->
+
+<div class="col-lg-4 mb-4">
+
+<h3 class="fw-bold">
+HR Synergy
+</h3>
+
+<p class="mt-3">
+
+A modern Human Resource Management
+System for employee attendance,
+leave, payroll and recruitment
+management.
+
+</p>
+
+</div>
+
+<!-- Column 2 -->
+
+<div class="col-lg-4 mb-4">
+
+<h5 class="fw-bold">
+Quick Links
+</h5>
+
+<p><a href="/" class="text-white text-decoration-none">Home</a></p>
+
+<p><a href="#" class="text-white text-decoration-none">Jobs</a></p>
+
+<p><a href="/contactus" class="text-white text-decoration-none">Contact</a></p>
+
+</div>
+
+
+
+<!-- Column 3 -->
+
+<div class="col-lg-4 mb-4">
+
+<h5 class="fw-bold">
+Contact
+</h5>
+
+<p>
+
+<i class="fa-solid fa-location-dot me-2 text-primary"></i>
+
+Lucknow, Uttar Pradesh
+
+</p>
+
+<p>
+
+<i class="fa-solid fa-envelope me-2 text-primary"></i>
+
+support@hrsynergy.com
+
+</p>
+
+</div>
+
+</div>
+
+<hr class="border-secondary">
+
+<p class="text-center mb-0">
+
+© 2026 HR Synergy. Designed And Developed By Anurag Maurya.
+
+</p>
+
+</div>
+
+</footer>
+<script th:src="@{/js/bootstrap.bundle.js}"></script>
+
+</body>
+
+</html>

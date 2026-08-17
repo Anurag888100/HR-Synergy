@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"
+      th:replace="~{admin/adminbase :: layout(~{::main})}">
+
+<body>
+
+<main>
+
+<div class="container-fluid">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h2 class="text-primary fw-bold">
+            <i class="fa-solid fa-briefcase me-2"></i>
+            Posted Jobs
+        </h2>
+
+        <a th:href="@{/admin/postjob}" class="btn btn-success">
+            <i class="fa-solid fa-plus me-2"></i>
+            Post New Job
+        </a>
+
+    </div>
+
+    <div class="card shadow">
+
+        <div class="card-body">
+
+            <table class="table table-hover table-bordered align-middle">
+
+                <thead class="table-dark">
+
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Location</th>
+                    <th>Salary</th>
+                    <th>Job Type</th>
+                    <th>Last Date</th>
+                    <th>Action</th>
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <tr th:if="${#lists.isEmpty(jobs)}">
+                    <td colspan="7" class="text-center text-danger fw-bold">
+                        No Jobs Posted Yet
+                    </td>
+                </tr>
+
+                <tr th:each="job : ${jobs}">
+
+                    <td th:text="${job.id}"></td>
+
+                    <td th:text="${job.title}"></td>
+
+                    <td th:text="${job.location}"></td>
+
+                    <td th:text="${job.salary}"></td>
+
+                    <td>
+                        <span class="badge bg-primary"
+                              th:text="${job.jobtype}">
+                        </span>
+                    </td>
+
+                    <td th:text="${job.lastdate}"></td>
+
+                    <td>
+
+                        <!-- View Applicants -->
+                        <a th:href="@{/admin/applicants(jobid=${job.id})}"
+                           class="btn btn-primary btn-sm">
+                            <i class="fa-solid fa-users me-1"></i>
+                            Applicants
+                        </a>
+
+                        <!-- Delete -->
+<td>
+    <form th:action="@{/admin/deletejob}" method="post"
+          style="display:inline;"
+          onsubmit="return confirm('Are you sure you want to delete this job?');">
+
+        <input type="hidden" name="id" th:value="${job.id}">
+
+        <button type="submit" class="btn btn-danger btn-sm">
+            Delete
+        </button>
+    </form>
+</td>
+
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+</main>
+
+</body>
+</html>

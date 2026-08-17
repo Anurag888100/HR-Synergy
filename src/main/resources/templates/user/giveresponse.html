@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{user/userbase :: layout(~{::main})}">
+
+<body>
+
+<main>
+
+    <!-- ================= HERO ================= -->
+
+<section class="feedback-hero hero-section">
+
+    <span class="hero-badge">
+        HR SYNERGY • FEEDBACK & COMPLAINT
+    </span>
+
+    <h1>
+        Share Your
+        <span class="highlight">Feedback</span>
+        &
+        <span class="highlight">Complaints</span>
+    </h1>
+
+    <p>
+        Your suggestions and concerns help us improve HR Synergy and
+        provide a better experience for everyone.
+    </p>
+
+    <div class="hero-wave">
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+            <path fill="#dbe8fb"
+                  d="M0,40 C360,90 1080,0 1440,50 L1440,90 L0,90 Z">
+            </path>
+        </svg>
+    </div>
+
+</section>
+
+<section class="feedback-section">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <!-- LEFT CARD -->
+
+            <div class="col-lg-5">
+
+                <div class="feedback-info-card info-card">
+
+                    <div class="info-icon">
+                        <i class="bi bi-chat-heart-fill"></i>
+                    </div>
+
+                    <h2>We Value Your Opinion</h2>
+
+                    <p>
+                        Whether you have a suggestion or a complaint,
+                        every response helps us improve HR Synergy.
+                    </p>
+
+                    <div class="info-item info-box">
+
+                        <div class="circle info-icon">
+                            <i class="bi bi-chat-dots-fill"></i>
+                        </div>
+
+                        <div class="info-content">
+
+                            <h5>Share Feedback</h5>
+
+                            <p>
+                                Tell us how we can improve our services.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="info-item info-box">
+
+                        <div class="circle info-icon">
+                            <i class="bi bi-exclamation-circle-fill"></i>
+                        </div>
+
+                        <div class="info-content">
+
+                            <h5>Report Complaint</h5>
+
+                            <p>
+                                Inform us if you face any issue while using
+                                HR Synergy.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="info-item info-box">
+
+                        <div class="circle info-icon">
+                            <i class="bi bi-clock-fill"></i>
+                        </div>
+
+                        <div class="info-content">
+
+                            <h5>Quick Review</h5>
+
+                            <p>
+                                Our support team usually reviews every
+                                response within 24 hours.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="info-item info-box">
+
+                        <div class="circle info-icon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+
+                        <div class="info-content">
+
+                            <h5>Email Support</h5>
+
+                            <p>
+                                support@hrsynergy.com
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT CARD -->
+
+            <div class="col-lg-7">
+
+                <div class="feedback-form-card response-card">
+
+                    <h2>Submit Your Response</h2>
+
+                    <p>
+                        Fill in the details below and send your feedback
+                        or complaint.
+                    </p>
+
+                    <form th:action="@{/user/giveresponse}"
+                          th:object="${rdto}"
+                          method="post">
+
+                        <!-- Response Type -->
+
+                        <label class="form-label">
+                            Response Type
+                        </label>
+
+                        <select class="form-select"
+                                th:field="*{responsetype}">
+
+                            <option value="feedback">
+                                Feedback
+                            </option>
+
+                            <option value="complaint">
+                                Complaint
+                            </option>
+
+                        </select>
+
+                        <!-- Subject -->
+
+                        <label class="form-label">
+                            Subject
+                        </label>
+
+                        <input type="text"
+                               class="form-control-custom"
+                               th:field="*{subject}"
+                               placeholder="Enter Subject"
+                               required>
+
+                        <!-- Message -->
+
+                        <label class="form-label">
+                            Message
+                        </label>
+
+                        <textarea class="form-control-custom"
+                                  rows="6"
+                                  th:field="*{responsetext}"
+                                  placeholder="Write your feedback or complaint..."
+                                  required></textarea>
+
+                        <button type="submit"
+                                class="btn-submit btn-submit-feedback">
+
+                            <i class="bi bi-send-fill me-2"></i>
+
+                            Submit Response
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+</body>
+</html>

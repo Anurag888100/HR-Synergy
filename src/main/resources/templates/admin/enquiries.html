@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{admin/adminbase :: layout(~{::main})}">
+
+<body>
+
+<main>
+    <div class="container-fluid">
+        <h2 class="mb-3">View Enquiries</h2>
+        <hr>
+
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Contact No.</th>
+                    <th>Email Address</th>
+                    <th>Enquiry Text</th>
+                        <th>Action</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr th:each="enquiry : ${enq}">
+                    <td th:text="${enquiry.id}"></td>
+                    <td th:text="${enquiry.name}"></td>
+                    <td th:text="${enquiry.address}"></td>
+                    <td th:text="${enquiry.contactno}"></td>
+                    <td th:text="${enquiry.emailaddress}"></td>
+                    <td th:text="${enquiry.enquirytext}"></td>
+                    
+<td>
+    <a th:href="@{/admin/deleteenquiry/{id}(id=${enquiry.id})}"
+       class="btn btn-danger btn-sm"
+       onclick="return confirm('Are you sure you want to delete this enquiry?');">
+        Delete
+    </a>
+</td>
+                </tr>
+
+                <tr th:if="${#lists.isEmpty(enq)}">
+                    <td colspan="6" class="text-center text-danger">
+                        No enquiries found.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+</body>
+</html>

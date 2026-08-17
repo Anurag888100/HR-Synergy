@@ -1,0 +1,912 @@
+/* ===========================================================
+   HR SYNERGY USER DASHBOARD
+   =========================================================== */
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#edf3fb;
+}
+
+/* =========================
+   Dashboard Wrapper
+========================= */
+
+.dashboard-wrapper{
+    padding:25px 10px;
+}
+
+/* =========================
+   Hero
+========================= */
+
+.hero-card{
+
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+
+    border-radius:25px;
+
+    padding:50px;
+
+    color:#fff;
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:0 20px 40px rgba(37,99,235,.25);
+
+}
+
+.hero-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    right:-60px;
+
+    top:-70px;
+
+}
+
+.hero-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    right:120px;
+
+    bottom:-70px;
+
+}
+
+.hero-badge{
+
+    display:inline-block;
+
+    background:rgba(255,255,255,.20);
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    margin-bottom:20px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.hero-card h1{
+
+    font-size:48px;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+}
+
+.hero-card p{
+
+    font-size:18px;
+
+    opacity:.95;
+
+    max-width:700px;
+
+}
+
+.hero-buttons{
+
+    margin-top:35px;
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-buttons .btn{
+
+    border-radius:12px;
+
+    padding:14px 28px;
+
+    font-weight:600;
+
+}
+
+.hero-right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.feature-box{
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    backdrop-filter:blur(12px);
+
+}
+
+.feature-box i{
+
+    font-size:26px;
+
+}
+
+.feature-box h6{
+
+    color:#fff;
+
+    margin:0;
+
+    font-size:18px;
+
+}
+
+.feature-box small{
+
+    color:#e7e7e7;
+
+}
+/* ===========================================================
+   STATISTICS CARDS
+   =========================================================== */
+
+.stat-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:28px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 45px rgba(37,99,235,.18);
+
+}
+
+.stat-card h3{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    margin:0;
+
+    color:#1f2937;
+
+}
+
+.stat-card p{
+
+    margin:6px 0 0;
+
+    color:#6b7280;
+
+    font-weight:500;
+
+    font-size:15px;
+
+}
+
+/* ===========================
+   ICONS
+=========================== */
+
+.icon{
+
+    width:80px;
+
+    height:80px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:30px;
+
+    flex-shrink:0;
+
+}
+
+.blue{
+
+    background:linear-gradient(135deg,#2563eb,#60a5fa);
+
+}
+
+.orange{
+
+    background:linear-gradient(135deg,#f59e0b,#fbbf24);
+
+}
+
+.green{
+
+    background:linear-gradient(135deg,#16a34a,#4ade80);
+
+}
+
+.purple{
+
+    background:linear-gradient(135deg,#7c3aed,#a855f7);
+
+}
+
+/* ===========================================================
+   SECTION TITLE
+   =========================================================== */
+
+.section-title{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+    color:#1e293b;
+
+}
+
+.section-title i{
+
+    color:#2563eb;
+
+    margin-right:10px;
+
+}
+
+/* ===========================================================
+   ACTION CARDS
+   =========================================================== */
+
+.action-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:35px;
+
+    text-align:center;
+
+    height:100%;
+
+    transition:.35s;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.07);
+
+}
+
+.action-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 22px 50px rgba(37,99,235,.18);
+
+}
+
+.action-icon{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:34px;
+
+    margin-bottom:22px;
+
+}
+
+.action-card h4{
+
+    font-size:23px;
+
+    font-weight:700;
+
+    margin-bottom:14px;
+
+}
+
+.action-card p{
+
+    color:#6b7280;
+
+    min-height:70px;
+
+    line-height:1.7;
+
+    font-size:15px;
+
+}
+
+.action-card .btn{
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    padding:12px;
+
+    transition:.3s;
+
+}
+
+.action-card .btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* ===========================================================
+   GENERAL BUTTONS
+   =========================================================== */
+
+.btn{
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ===========================================================
+   CARD HEADER
+   =========================================================== */
+
+.card-header-custom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.card-header-custom h4{
+
+    margin:0;
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+.card-header-custom span{
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+/* ===========================================================
+   DASHBOARD CARD
+=========================================================== */
+
+.dashboard-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 20px 45px rgba(37,99,235,.15);
+
+}
+
+/* ===========================================================
+   APPLICATION TIMELINE
+=========================================================== */
+
+.progress-wrapper{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-top:45px;
+
+    flex-wrap:wrap;
+
+}
+
+.progress-step{
+
+    text-align:center;
+
+    width:120px;
+
+    position:relative;
+
+}
+
+.progress-step .circle{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:#eef4ff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:auto;
+
+    font-size:28px;
+
+    color:#2563eb;
+
+    transition:.3s;
+
+}
+
+.progress-step.active .circle{
+
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+
+    color:#fff;
+
+}
+
+.progress-step h6{
+
+    margin-top:15px;
+
+    font-weight:600;
+
+}
+
+.line{
+
+    height:5px;
+
+    flex:1;
+
+    background:#d6dce5;
+
+    margin:0 10px;
+
+    border-radius:50px;
+
+}
+
+.line.active{
+
+    background:linear-gradient(90deg,#2563eb,#7c3aed);
+
+}
+
+/* ===========================================================
+   TIPS
+=========================================================== */
+
+.tips-list{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.tips-list li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #edf2f7;
+
+    font-weight:500;
+
+}
+
+.tips-list li:last-child{
+
+    border:none;
+
+}
+
+.tips-list i{
+
+    color:#16a34a;
+
+    font-size:18px;
+
+}
+
+/* ===========================================================
+   RECENT ACTIVITY
+=========================================================== */
+
+.activity-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+.activity-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.activity-icon{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#fff;
+
+    font-size:24px;
+
+}
+
+.activity-item h6{
+
+    margin-bottom:5px;
+
+    font-weight:700;
+
+}
+
+.activity-item small{
+
+    color:#6b7280;
+
+}
+
+/* ===========================================================
+   SUPPORT CARD
+=========================================================== */
+
+.support-card{
+
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+
+    color:#fff;
+
+    border-radius:24px;
+
+    padding:35px;
+
+    box-shadow:0 18px 45px rgba(37,99,235,.20);
+
+    height:100%;
+
+}
+
+.support-icon{
+
+    width:85px;
+
+    height:85px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.18);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:34px;
+
+    margin-bottom:25px;
+
+}
+
+.support-card h3{
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.support-card p{
+
+    opacity:.95;
+
+}
+
+.support-card ul{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:30px 0;
+
+}
+
+.support-card li{
+
+    margin-bottom:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.support-card i{
+
+    width:24px;
+
+}
+
+.support-card .btn{
+
+    border-radius:12px;
+
+    font-weight:600;
+
+}
+
+/* ===========================================================
+   RESPONSIVE
+=========================================================== */
+
+@media(max-width:992px){
+
+.hero-card{
+
+padding:35px;
+
+}
+
+.hero-card h1{
+
+font-size:36px;
+
+}
+
+.hero-right{
+
+margin-top:35px;
+
+}
+
+.progress-wrapper{
+
+justify-content:center;
+
+gap:25px;
+
+}
+
+.line{
+
+display:none;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero-card{
+
+text-align:center;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.stat-card{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.card-header-custom{
+
+flex-direction:column;
+
+gap:12px;
+
+align-items:flex-start;
+
+}
+
+.section-title{
+
+font-size:26px;
+
+}
+
+.action-card{
+
+padding:25px;
+
+}
+
+.dashboard-card{
+
+padding:22px;
+
+}
+
+.support-card{
+
+padding:28px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.hero-card h1{
+
+font-size:30px;
+
+}
+
+.hero-card p{
+
+font-size:15px;
+
+}
+
+.stat-card h3{
+
+font-size:28px;
+
+}
+
+.progress-step{
+
+width:100px;
+
+}
+
+.progress-step .circle{
+
+width:60px;
+
+height:60px;
+
+font-size:24px;
+
+}
+
+}

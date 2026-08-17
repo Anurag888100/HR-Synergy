@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en"
+      th:replace="~{admin/adminbase :: layout(~{::main})}">
+
+<body>
+
+<main>
+
+<div class="container-fluid">
+
+    <h2 class="text-primary fw-bold mb-4">
+        Applicants List
+    </h2>
+
+    <table class="table table-bordered table-hover">
+
+        <thead class="table-dark">
+
+        <tr>
+
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Qualification</th>
+            <th>Experience</th>
+            <th>Resume</th>
+            <th>Status</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr th:each="app, stat : ${applications}">
+
+            <td th:text="${stat.count}"></td>
+
+            <td th:text="${app.fullname}"></td>
+
+            <td th:text="${app.email}"></td>
+
+            <td th:text="${app.contact}"></td>
+
+            <td th:text="${app.qualification}"></td>
+
+            <td th:text="${app.experience}"></td>
+
+            <td>
+
+                <a th:href="@{'/resumes/' + ${app.resume}}"
+                   target="_blank"
+                   class="btn btn-sm btn-primary">
+
+                    View Resume
+
+                </a>
+
+            </td>
+
+            <td>
+
+                <span class="badge bg-warning"
+                      th:text="${app.status}">
+                </span>
+
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</main>
+
+</body>
+</html>

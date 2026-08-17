@@ -1,0 +1,234 @@
+
+/* ===========================
+   ADD EMPLOYEE PAGE
+=========================== */
+
+body{
+    background:#eef3fb;
+    font-family:'Segoe UI',sans-serif;
+    color:#1b2336;
+}
+
+/* Header */
+
+.employee-header{
+    padding:35px 0 20px;
+}
+
+.header-card{
+    background:linear-gradient(135deg,#1f6fff,#6b19ff);
+    border-radius:24px;
+    padding:30px 35px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 18px 50px rgba(15,23,42,.15);
+}
+
+.header-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.header-icon{
+    width:58px;
+    height:58px;
+    border-radius:16px;
+    background:rgba(255,255,255,.15);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:26px;
+    color:#fff;
+}
+
+.header-card h1{
+    color:#fff;
+    font-weight:800;
+    margin:0;
+    font-size:2rem;
+}
+
+.header-card p{
+    color:#eef2ff;
+    margin:4px 0 0;
+}
+
+.dashboard-btn{
+    color:#fff;
+    text-decoration:none;
+    background:rgba(255,255,255,.15);
+    padding:14px 28px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.35);
+    font-weight:700;
+    transition:.3s;
+}
+
+.dashboard-btn:hover{
+    background:#fff;
+    color:#2f5df5;
+}
+
+/* Form */
+
+.employee-form-section{
+    padding:20px 0 60px;
+}
+
+.form-card{
+    background:#fff;
+    border-radius:26px;
+    padding:28px;
+    box-shadow:0 20px 60px rgba(15,23,42,.10);
+}
+
+.form-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:1.8rem;
+    font-weight:800;
+    margin-bottom:22px;
+}
+
+.form-title i{
+    color:#2f5df5;
+}
+
+.info-box{
+    margin-bottom:28px;
+    padding:18px 22px;
+    border-radius:16px;
+    background:linear-gradient(90deg,#eef2ff,#f7ecff);
+    border:1px solid #d7dcff;
+    color:#475569;
+}
+
+.info-box i{
+    color:#2f5df5;
+    margin-right:10px;
+}
+
+.form-group{
+    margin-bottom:22px;
+}
+
+.form-group label{
+    font-weight:700;
+    margin-bottom:8px;
+    display:block;
+}
+
+.input-box{
+    position:relative;
+}
+
+.input-box i{
+    position:absolute;
+    left:18px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#8b95a7;
+    z-index:2;
+}
+
+.input-box.textarea i{
+    top:22px;
+    transform:none;
+}
+
+.form-control,
+.form-select{
+    height:56px;
+    border-radius:15px;
+    border:1px solid #dde3ef;
+    padding-left:48px;
+    box-shadow:none;
+    transition:.3s;
+}
+
+textarea.form-control{
+    height:120px;
+    padding-top:16px;
+    resize:none;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color:#4f6df5;
+    box-shadow:0 0 0 .2rem rgba(79,109,245,.15);
+}
+
+/* Buttons */
+
+.form-buttons{
+    display:flex;
+    justify-content:flex-end;
+    gap:16px;
+    margin-top:30px;
+}
+
+.btn-back{
+    text-decoration:none;
+    background:#fff;
+    border:1px solid #d9dfec;
+    color:#1f2937;
+    border-radius:14px;
+    padding:14px 28px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-save{
+    border:none;
+    background:linear-gradient(135deg,#1f6fff,#6b19ff);
+    color:#fff;
+    padding:14px 34px;
+    border-radius:14px;
+    font-weight:700;
+    box-shadow:0 15px 35px rgba(79,109,245,.30);
+    transition:.3s;
+}
+
+.btn-save:hover{
+    transform:translateY(-3px);
+    box-shadow:0 22px 45px rgba(79,109,245,.40);
+}
+
+.btn-back:hover{
+    background:#f5f7fb;
+}
+
+/* Card hover */
+
+.form-card:hover{
+    box-shadow:0 28px 70px rgba(15,23,42,.12);
+}
+
+/* Responsive */
+
+@media(max-width:991px){
+
+.header-card{
+    flex-direction:column;
+    gap:20px;
+    text-align:center;
+}
+
+.header-left{
+    flex-direction:column;
+}
+
+.form-buttons{
+    flex-direction:column;
+}
+
+.btn-back,
+.btn-save{
+    width:100%;
+    text-align:center;
+}
+
+}

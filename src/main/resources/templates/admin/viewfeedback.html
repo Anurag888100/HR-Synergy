@@ -1,0 +1,26 @@
+<html lang="en" th:replace="~{admin/adminbase :: layout(~{::main})}">
+<body>
+ <main>
+ 	<h1>Feedback</h1>
+ 	<hr>
+ 	<table class="table table-bordered" style="margin:auto; width:50%">
+ 	<tr>
+ 	<th>Id</th>
+ 		<th>Name</th>
+ 		<th>Contact No</th>
+ 		<th>Subject</th>
+ 			<th>Feedback</th>
+ 			<th>Posted Date</th>
+ 	</tr>
+ 	<tr th:each="f:${feed}">
+ 	<td th:text="${f.id}"></td>
+ 	<td th:text="${f.name}"></td>
+ 	<td th:text="${f.contactno}"></td>
+ 	<td th:text="${f.subject}"></td>
+ 	<td th:text="${f.responsetext}"></td>
+ 	<td th:text="${f.posteddate}"></td>
+ 	</tr>
+ 	</table>
+ </main>
+</body>
+</html>

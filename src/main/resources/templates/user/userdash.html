@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{user/userbase::layout(~{::main})}">
+<head>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+	<main>
+
+	<main>
+
+<section class="dashboard-wrapper py-4">
+
+<div class="container-fluid">
+
+    <!-- ================= HERO ================= -->
+
+    <div class="hero-card">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-8">
+
+                <span class="hero-badge">
+                    <i class="fa-solid fa-star"></i>
+                    Career Portal
+                </span>
+
+                <h1>
+                    Welcome to HR Synergy
+                    <br>
+                    Career Portal
+                </h1>
+
+                <p>
+                    Explore job opportunities, manage your profile,
+                    update your resume and track all your applications
+                    from one dashboard.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a th:href="@{/user/viewjobs}"
+                       class="btn btn-light btn-lg">
+
+                        <i class="fa-solid fa-briefcase"></i>
+
+                        Browse Jobs
+
+                    </a>
+
+                  
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="hero-right">
+
+                    <div class="feature-box">
+
+                        <i class="fa-solid fa-rocket"></i>
+
+                        <div>
+
+                            <h6>Career Growth</h6>
+
+                            <small>Track your journey</small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <i class="fa-solid fa-check"></i>
+
+                        <div>
+
+                            <h6>Applications</h6>
+
+                            <small>Manage with ease</small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= STATS ================= -->
+
+    <div class="row g-4 mt-2">
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="stat-card">
+
+                <div class="icon blue">
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                </div>
+
+                <div>
+
+                    <h3 th:text="${totalJobs}">20</h3>
+
+                    <p>Available Jobs</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="stat-card">
+
+                <div class="icon orange">
+
+                    <i class="fa-solid fa-file-circle-check"></i>
+
+                </div>
+
+                <div>
+
+                    <h3 th:text="${appliedCount}">8</h3>
+
+                    <p>Applications</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="stat-card">
+
+                <div class="icon green">
+
+                    <i class="fa-solid fa-user-check"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>Active</h3>
+
+                    <p>Profile Status</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="stat-card">
+
+                <div class="icon purple">
+
+                    <i class="fa-solid fa-id-card"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>100%</h3>
+
+                    <p>Profile Complete</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= QUICK ACTIONS ================= -->
+
+    <h2 class="section-title mt-5">
+
+        <i class="fa-solid fa-layer-group"></i>
+
+        Quick Actions
+
+    </h2>
+
+
+
+    <div class="row g-4 mt-2">
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="action-card">
+
+                <div class="action-icon blue">
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                </div>
+
+                <h4>Available Jobs</h4>
+
+                <p>
+                    Explore current vacancies and apply for suitable jobs.
+                </p>
+
+                <a th:href="@{/user/viewjobs}"
+                   class="btn btn-primary w-100">
+
+                    View Jobs
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="action-card">
+
+                <div class="action-icon orange">
+
+                    <i class="fa-solid fa-file-circle-check"></i>
+
+                </div>
+
+                <h4>My Applications</h4>
+
+                <p>
+                    Track submitted applications and recruitment status.
+                </p>
+
+                <a href="#"
+                   class="btn btn-warning w-100 text-white">
+
+                    View Applications
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="action-card">
+
+                <div class="action-icon green">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+                <h4>My Profile</h4>
+
+                <p>
+
+                    View your personal information, qualification
+                    and experience.
+
+                </p>
+
+                <a th:href="@{/user/viewprofile}"
+                   class="btn btn-success w-100">
+
+                    View Profile
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="action-card">
+
+                <div class="action-icon purple">
+
+                    <i class="fa-solid fa-user-pen"></i>
+
+                </div>
+
+                <h4>Edit Profile</h4>
+
+                <p>
+
+                    Update profile details and skills.
+
+                </p>
+
+                <a href="#"
+                   class="btn btn-secondary w-100">
+
+                    Edit Profile
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= APPLICATION PROGRESS ================= -->
+
+<div class="row mt-5">
+
+    <div class="col-lg-8">
+
+        <div class="dashboard-card">
+
+            <div class="card-header-custom">
+
+                <h4>
+                    <i class="fa-solid fa-route"></i>
+                    Application Progress
+                </h4>
+
+                <span>Typical Recruitment Stages</span>
+
+            </div>
+
+            <div class="progress-wrapper">
+
+                <div class="progress-step active">
+
+                    <div class="circle">
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                    </div>
+
+                    <h6>Applied</h6>
+
+                </div>
+
+                <div class="line active"></div>
+
+                <div class="progress-step">
+
+                    <div class="circle">
+
+                        <i class="fa-solid fa-file"></i>
+
+                    </div>
+
+                    <h6>Resume Review</h6>
+
+                </div>
+
+                <div class="line"></div>
+
+                <div class="progress-step">
+
+                    <div class="circle">
+
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+                    <h6>Shortlisted</h6>
+
+                </div>
+
+                <div class="line"></div>
+
+                <div class="progress-step">
+
+                    <div class="circle">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+                    <h6>Interview</h6>
+
+                </div>
+
+                <div class="line"></div>
+
+                <div class="progress-step">
+
+                    <div class="circle">
+
+                        <i class="fa-solid fa-briefcase"></i>
+
+                    </div>
+
+                    <h6>Hired</h6>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= CAREER TIPS ================= -->
+
+    <div class="col-lg-4">
+
+        <div class="dashboard-card">
+
+            <div class="card-header-custom">
+
+                <h4>
+
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                    Career Tips
+
+                </h4>
+
+            </div>
+
+            <ul class="tips-list">
+
+                <li>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Keep your resume updated
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Complete your profile fully
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Apply only for suitable roles
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Prepare for technical interviews
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Check application status regularly
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= RECENT ACTIVITY ================= -->
+
+<div class="row mt-5">
+
+    <div class="col-lg-8">
+
+        <div class="dashboard-card">
+
+            <div class="card-header-custom">
+
+                <h4>
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    Recent Activity
+
+                </h4>
+
+            </div>
+
+            <div class="activity-list">
+
+                <div class="activity-item">
+
+                    <div class="activity-icon blue">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h6>Profile Viewed</h6>
+
+                        <small>Your profile was recently viewed by a recruiter.</small>
+
+                    </div>
+
+                </div>
+
+                <div class="activity-item">
+
+                    <div class="activity-icon orange">
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h6>Application Submitted</h6>
+
+                        <small>Your job application has been submitted.</small>
+
+                    </div>
+
+                </div>
+
+                <div class="activity-item">
+
+                    <div class="activity-icon purple">
+
+                        <i class="fa-solid fa-briefcase"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h6>New Jobs Available</h6>
+
+                        <small>Browse the latest vacancies today.</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= SUPPORT ================= -->
+
+    <div class="col-lg-4">
+
+        <div class="support-card">
+
+            <div class="support-icon">
+
+                <i class="fa-solid fa-headset"></i>
+
+            </div>
+
+            <h3>
+
+                Recruitment Support
+
+            </h3>
+
+            <p>
+
+                Need help with your application or profile?
+
+            </p>
+
+            <ul>
+
+                <li>
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    support@hrsynergy.com
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    +91-8881009961
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    Mon-Fri, 9 AM - 6 PM
+
+                </li>
+
+            </ul>
+
+            <a th:href="@{/user/viewjobs}"
+               class="btn btn-light w-100">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+                Browse Jobs
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+</main>
+
+</main>
+
+</body>
+
+</html>

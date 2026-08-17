@@ -1,0 +1,361 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1a1f36;
+}
+
+.badge-soft {
+    background: #e4ecfe;
+    color: #2f5df5;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 18px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+
+.home-hero{
+    background:
+    linear-gradient(
+        rgba(232,239,300,0.50),
+        rgba(232,239,300,0.50)
+    ),
+    url("https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1800&q=80");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding:80px 0 70px;
+}
+
+.home-hero h1 {
+    font-weight: 800;
+    font-size: 2.7rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.home-hero p {
+    color: #5b6270;
+    max-width: 480px;
+    margin-bottom: 28px;
+}
+
+
+
+.btn-hero-primary {
+    background: #2f5df5;
+    color: #fff;
+    font-weight: 700;
+    padding: 12px 26px;
+    border-radius: 50px;
+    border: none;
+}
+
+.btn-hero-primary:hover {
+    background: #244bcc;
+    color: #fff;
+}
+
+.btn-hero-outline {
+    background: #fff;
+    color: #2f5df5;
+    font-weight: 700;
+    padding: 12px 26px;
+    border-radius: 50px;
+    border: 1px solid #2f5df5;
+}
+
+.btn-hero-outline:hover {
+    background: #f0f4ff;
+    color: #2f5df5;
+}
+
+
+.hero-banner-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 14px;
+    box-shadow: 0 20px 45px rgba(30, 40, 90, 0.12);
+}
+
+.hero-banner-card img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+
+
+.stat-cards {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid #eef0f6;
+    border-radius: 14px;
+    padding: 32px 20px;
+    text-align: center;
+    height: 100%;
+    box-shadow: 0 6px 18px rgba(30, 40, 90, 0.05);
+}
+
+.stat-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 16px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #4f6df5, #7b2ff7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 22px;
+}
+
+.stat-card h4 {
+    font-weight: 800;
+    margin-bottom: 2px;
+    color: #2f5df5;
+}
+
+.stat-card span {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+
+.about-platform {
+    padding: 70px 0;
+    background: #f4f6fb;
+}
+
+.about-platform img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(30, 40, 90, 0.12);
+}
+
+.about-platform h2 {
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.about-platform>.container>.row>div p,
+.about-platform p.lead-text {
+    color: #5b6270;
+    margin-bottom: 26px;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.check-item i {
+    color: #2f5df5;
+}
+
+
+
+.powerful-features {
+    padding: 80px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.section-eyebrow {
+    color: #2f5df5;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.section-heading {
+    font-weight: 800;
+    font-size: 2rem;
+    margin-bottom: 6px;
+}
+
+.section-subtext {
+    color: #6b7280;
+    margin-bottom: 46px;
+}
+
+.pf-card {
+    background: #fff;
+    border: 1px solid #eef0f6;
+    border-radius: 16px;
+    padding: 32px 22px;
+    height: 100%;
+    box-shadow: 0 6px 18px rgba(30, 40, 90, 0.05);
+}
+
+.pf-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 18px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #4f6df5, #7b2ff7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+}
+
+.pf-card h6 {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.pf-card p {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+
+.benefits-banner {
+    padding: 0 0 80px;
+    background: #fff;
+}
+
+.benefits-card {
+    background: linear-gradient(135deg, #2f5df5 0%, #7b2ff7 100%);
+    border-radius: 20px;
+    padding: 55px;
+    color: #fff;
+}
+
+.benefits-badge {
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 18px;
+}
+
+.benefits-card h2 {
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom: 14px;
+}
+
+.benefits-card p {
+    opacity: 0.9;
+    margin-bottom: 24px;
+}
+
+.btn-explore {
+    background: #fff;
+    color: #2f5df5;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+}
+
+.benefits-img-frame {
+    background: #fff;
+    border-radius: 14px;
+    padding: 10px;
+}
+
+.benefits-img-frame img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+
+
+.workflow {
+    padding: 80px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.workflow-card {
+    background: #fff;
+    border-left: 4px solid #2f5df5;
+    border-radius: 10px;
+    padding: 30px 26px;
+    text-align: left;
+    height: 100%;
+    box-shadow: 0 6px 18px rgba(30, 40, 90, 0.06);
+}
+
+.workflow-num {
+    font-weight: 800;
+    font-size: 2.2rem;
+    color: #dbe3fb;
+    margin-bottom: 8px;
+}
+
+.workflow-card h6 {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.workflow-card p {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+
+.gallery {
+    padding: 70px 0 80px;
+    background: #f4f6fb;
+    text-align: center;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(30, 40, 90, 0.1);
+}
+
+
+.home-cta {
+    padding: 0 0 90px;
+    background: #f4f6fb;
+}
+
+.cta-card {
+    background: linear-gradient(135deg, #2f5df5 0%, #7b2ff7 100%);
+    border-radius: 20px;
+    padding: 55px;
+    text-align: center;
+    color: #fff;
+}
+
+.cta-card h2 {
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.cta-card p {
+    opacity: 0.9;
+    margin-bottom: 24px;
+}
+
+.btn-cta-login {
+    background: #fff;
+    color: #2f5df5;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 50px;
+    border: none;
+}

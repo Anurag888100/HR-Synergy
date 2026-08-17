@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{base::layout(~{::main})}">
+
+<head>
+
+<link rel="stylesheet" th:href="@{/css/addemployee.css}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<main>
+
+<!-- =======================================================
+                    PAGE HEADER
+======================================================== -->
+
+<section class="employee-header">
+
+    <div class="container">
+
+        <div class="header-card">
+
+            <div class="header-left">
+
+                <div class="header-icon">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+
+                <div>
+
+                    <h1>Add Employee</h1>
+
+                    <p>
+                        Register a new employee in HR Synergy
+                    </p>
+
+                </div>
+
+            </div>
+
+            <a href="#" class="dashboard-btn">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Dashboard
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =======================================================
+                  EMPLOYEE FORM
+======================================================== -->
+
+<section class="employee-form-section">
+
+<div class="container">
+
+<div class="form-card">
+
+<!-- Card Heading -->
+
+<div class="form-title">
+
+<i class="fa-solid fa-id-card"></i>
+
+<h2>Employee Registration Form</h2>
+
+</div>
+
+<!-- Info Box -->
+
+<div class="info-box">
+
+<i class="fa-solid fa-user-lock"></i>
+
+Employee login credentials will be created using email and password.
+
+</div>
+
+<form th:action="@{/saveemployee}"
+      method="post"
+      th:object="${employee}">
+
+<div class="row">
+
+<!-- =======================================================
+                    LEFT COLUMN
+======================================================== -->
+
+<div class="col-lg-6">
+
+<div class="form-group">
+
+<label>
+
+Employee Name
+
+</label>
+
+<div class="input-box">
+
+<i class="fa-solid fa-user"></i>
+
+<input
+type="text"
+th:field="*{name}"
+class="form-control"
+placeholder="Enter employee name">
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Father's Name
+
+</label>
+
+<div class="input-box">
+
+<i class="fa-solid fa-user-tie"></i>
+
+<input
+type="text"
+name="fathername"
+class="form-control"
+placeholder="Enter father's name">
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Email Address
+
+</label>
+
+<div class="input-box">
+
+<i class="fa-solid fa-envelope"></i>
+
+<input
+type="email"
+th:field="*{emailaddress}"
+class="form-control"
+placeholder="Enter email address">
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Department
+
+</label>
+
+<div class="input-box">
+
+<i class="fa-solid fa-building"></i>
+
+<input
+type="text"
+name="department"
+class="form-control"
+placeholder="Enter department">
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Salary
+
+</label>
+
+<div class="input-box">
+
+<i class="fa-solid fa-money-bill"></i>
+
+<input
+type="number"
+name="salary"
+class="form-control"
+placeholder="Enter salary">
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Address 2
+
+</label>
+
+<div class="input-box textarea">
+
+<i class="fa-solid fa-map-location-dot"></i>
+
+<textarea
+rows="3"
+class="form-control"
+placeholder="Enter address line 2">
+
+</textarea>
+
+</div>
+
+</div>
+
+</div>
+<!-- =======================================================
+                    RIGHT COLUMN
+======================================================== -->
+
+<div class="col-lg-6">
+
+    <!-- Gender -->
+
+    <div class="form-group">
+
+        <label>Gender</label>
+
+        <div class="input-box">
+
+            <i class="fa-solid fa-venus-mars"></i>
+
+            <select class="form-select" th:field="*{gender}">
+
+                <option value="">Select Gender</option>
+
+                <option value="Male">Male</option>
+
+                <option value="Female">Female</option>
+
+                <option value="Other">Other</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <!-- Contact -->
+
+    <div class="form-group">
+
+        <label>Contact No</label>
+
+        <div class="input-box">
+
+            <i class="fa-solid fa-phone"></i>
+
+            <input
+                type="text"
+                class="form-control"
+                th:field="*{contactno}"
+                placeholder="Enter contact number">
+
+        </div>
+
+    </div>
+
+    <!-- Password -->
+
+    <div class="form-group">
+
+        <label>Password</label>
+
+        <div class="input-box">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <input
+                type="password"
+                class="form-control"
+                th:field="*{password}"
+                placeholder="Set login password">
+
+        </div>
+
+    </div>
+
+    <!-- Designation -->
+
+    <div class="form-group">
+
+        <label>Designation</label>
+
+        <div class="input-box">
+
+            <i class="fa-solid fa-briefcase"></i>
+
+            <input
+                type="text"
+                name="designation"
+                class="form-control"
+                placeholder="Enter designation">
+
+        </div>
+
+    </div>
+
+    <!-- Address 1 -->
+
+    <div class="form-group">
+
+        <label>Address 1</label>
+
+        <div class="input-box textarea">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <textarea
+                rows="3"
+                class="form-control"
+                th:field="*{address}"
+                placeholder="Enter address line 1">
+            </textarea>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- =======================================================
+                    BUTTONS
+======================================================== -->
+
+<div class="form-buttons">
+
+    <a th:href="@{/admindashboard}" class="btn-back">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        Back
+
+    </a>
+
+    <button type="submit" class="btn-save">
+
+        <i class="fa-solid fa-floppy-disk"></i>
+
+        Save Employee
+
+    </button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</body>
+
+</html>

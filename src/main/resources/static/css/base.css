@@ -1,0 +1,220 @@
+/* ===========================
+           BODY
+=========================== */
+
+body{
+    background:#f5f8ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===========================
+         NAVBAR
+=========================== */
+
+.navbar{
+    background:#ffffff !important;
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+
+.navbar-brand img{
+    border-radius:10px;
+}
+
+.navbar-brand h4{
+    font-size:30px;
+    font-weight:700;
+    color:#2563eb;
+    margin-bottom:2px;
+}
+
+.navbar-brand small{
+    font-size:15px;
+    color:#6b7280;
+}
+
+/* ===========================
+      NAVIGATION LINKS
+=========================== */
+
+.navbar-nav .nav-link{
+
+    color:#1f2937;
+    font-size:18px;
+    font-weight:600;
+
+    margin-left:10px;
+    margin-right:10px;
+
+    transition:.3s;
+}
+
+.navbar-nav .nav-link:hover{
+
+    color:#2563eb;
+
+}
+
+/* ===========================
+       LOGIN BUTTON
+=========================== */
+
+.btn-login{
+
+    background:linear-gradient(90deg,#2563eb,#6d28d9);
+
+    color:white;
+
+    border:none;
+
+    border-radius:35px;
+
+    padding:10px 30px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.btn-login:hover{
+
+    transform:translateY(-2px);
+
+    color:white;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+
+}
+
+/* ===========================
+         MAIN SECTION
+=========================== */
+
+.container{
+
+    max-width:1250px;
+
+}
+
+/* ===========================
+           FOOTER
+=========================== */
+
+footer{
+
+    background:#111827;
+
+    color:white;
+
+}
+
+footer h3{
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+}
+
+footer h5{
+
+    font-size:24px;
+
+    margin-bottom:20px;
+
+    font-weight:bold;
+
+}
+
+footer p{
+
+    font-size:17px;
+
+    color:#d1d5db;
+
+    line-height:32px;
+
+}
+
+footer a{
+
+    color:#d1d5db;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+footer a:hover{
+
+    color:white;
+
+    padding-left:5px;
+
+}
+
+footer i{
+
+    color:#3b82f6;
+
+    width:25px;
+
+}
+
+footer hr{
+
+    border-color:#374151;
+
+}
+
+footer .text-center{
+
+    color:#d1d5db;
+
+    font-size:17px;
+
+}
+
+/* ===========================
+      RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.navbar-brand h4{
+
+    font-size:24px;
+
+}
+
+.navbar-nav{
+
+    text-align:center;
+
+    margin-top:20px;
+
+}
+
+.btn-login{
+
+    width:100%;
+
+    margin-top:20px;
+
+}
+
+footer{
+
+    text-align:center;
+
+}
+
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}

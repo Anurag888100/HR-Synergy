@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base::layout(~{::main})}">
+
+<body>
+
+<main class="apply-page">
+
+    <!-- ================= HERO ================= -->
+
+    <section class="apply-hero">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-8 mx-auto text-center">
+
+                    <span class="hero-badge">
+
+                        <i class="fa-solid fa-briefcase"></i>
+
+                        Career Opportunity
+
+                    </span>
+
+                    <h1>
+
+                        Apply for
+
+                        <span th:text="${job.title}">
+                            Java Developer
+                        </span>
+
+                    </h1>
+
+                    <p>
+
+                        Complete the application form below and take the
+                        next step in your career with
+                        <strong>HR Synergy</strong>.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= APPLICATION CARD ================= -->
+
+    <section class="apply-form-section">
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-9">
+
+                    <div class="apply-card">
+
+                        <!-- Card Header -->
+
+                        <div class="apply-card-header">
+
+                            <div>
+
+                                <h3>
+
+                                    <i class="fa-solid fa-user-check me-2"></i>
+
+                                    Job Application
+
+                                </h3>
+
+                                <p>
+
+                                    Your profile details are automatically
+                                    filled from your account.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <!-- FORM START -->
+
+                        <form method="post"
+                              th:action="@{/applyjob}"
+                              th:object="${adto}"
+                              enctype="multipart/form-data">
+
+                            <input type="hidden"
+                                   name="jobid"
+                                   th:value="${jobid}">
+
+                            <!-- PART 2 STARTS HERE -->
+                        <input type="hidden"
+       name="jobid"
+       th:value="${jobid}">  
+       
+       <!-- ================= PERSONAL INFORMATION ================= -->
+
+<div class="form-section">
+
+    <div class="section-title">
+
+        <i class="fa-solid fa-user text-primary me-2"></i>
+
+        Personal Information
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6 mb-4">
+
+            <label class="form-label">
+                <i class="fa-solid fa-user me-2 text-primary"></i>
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                class="form-control custom-input"
+                th:field="*{fullname}"
+                readonly>
+
+        </div>
+
+        <div class="col-md-6 mb-4">
+
+            <label class="form-label">
+                <i class="fa-solid fa-envelope me-2 text-primary"></i>
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                class="form-control custom-input"
+                th:field="*{email}"
+                readonly>
+
+        </div>
+
+        <div class="col-md-6 mb-4">
+
+            <label class="form-label">
+                <i class="fa-solid fa-phone me-2 text-primary"></i>
+                Contact Number
+            </label>
+
+            <input
+                type="text"
+                class="form-control custom-input"
+                th:field="*{contact}"
+                readonly>
+
+        </div>
+
+        <div class="col-md-6 mb-4">
+
+            <label class="form-label">
+                <i class="fa-solid fa-location-dot me-2 text-primary"></i>
+                Applying For
+            </label>
+
+            <input
+                type="text"
+                class="form-control custom-input"
+                th:value="${job.title}"
+                readonly>
+
+        </div>
+
+    </div>
+
+</div>
+
+<hr class="my-4">
+<!-- ================= PROFESSIONAL INFORMATION ================= -->
+
+<div class="form-section">
+
+    <div class="section-title">
+
+        <i class="fa-solid fa-briefcase text-primary me-2"></i>
+
+        Professional Information
+
+    </div>
+
+    <div class="row">
+
+        <!-- Qualification -->
+
+        <div class="col-md-6 mb-4">
+
+            <label class="form-label">
+
+                <i class="fa-solid fa-graduation-cap me-2 text-primary"></i>
+
+                Highest Qualification
+
+            </label>
+
+            <input
+                type="text"
+                class="form-control custom-input"
+                th:field="*{qualification}"
+                readonly>
+
+        </div>
+
+        <!-- Experience -->
+
+        <div class="col-md-6 mb-4">
+
+            <label class="form-label">
+
+                <i class="fa-solid fa-briefcase me-2 text-primary"></i>
+
+                Experience
+
+            </label>
+
+            <input
+                type="text"
+                class="form-control custom-input"
+                th:field="*{experience}"
+                readonly>
+
+        </div>
+
+    </div>
+
+</div>
+
+<hr class="my-4">
+
+<!-- ================= COVER LETTER ================= -->
+
+<div class="form-section">
+
+    <div class="section-title">
+
+        <i class="fa-solid fa-file-signature text-primary me-2"></i>
+
+        Cover Letter
+
+    </div>
+
+    <p class="text-muted mb-3">
+
+        Tell us why you're interested in this position and why you'd be a great fit.
+
+    </p>
+
+    <textarea
+        class="form-control custom-textarea"
+        rows="8"
+        placeholder="Write your cover letter here..."
+        th:field="*{coverletter}"
+        required></textarea>
+
+</div>
+
+<hr class="my-4">
+<!-- ================= RESUME UPLOAD ================= -->
+
+<div class="form-section">
+
+    <div class="section-title">
+
+        <i class="fa-solid fa-file-arrow-up text-primary me-2"></i>
+
+        Resume
+
+    </div>
+
+    <p class="text-muted mb-3">
+
+        Upload your latest resume in PDF, DOC or DOCX format.
+
+    </p>
+
+    <div class="mb-4">
+
+        <label class="form-label">
+
+            <i class="fa-solid fa-file-pdf text-danger me-2"></i>
+
+            Upload Resume
+
+        </label>
+
+        <input
+                type="file"
+                name="resume"
+                class="form-control custom-input"
+                accept=".pdf,.doc,.docx"
+                required>
+
+        <small class="text-muted">
+
+            Maximum file size: 5 MB
+
+        </small>
+
+    </div>
+
+</div>
+
+<hr class="my-4">
+
+<!-- ================= DECLARATION ================= -->
+
+<div class="form-check mb-4">
+
+    <input
+            class="form-check-input"
+            type="checkbox"
+            id="agree"
+            required>
+
+    <label class="form-check-label" for="agree">
+
+        I confirm that all the information provided is true and I agree to
+        HR Synergy's recruitment process and privacy policy.
+
+    </label>
+
+</div>
+
+<!-- ================= ACTION BUTTONS ================= -->
+
+<div class="d-flex justify-content-between flex-wrap gap-3">
+
+    <a th:href="@{/jobs}" class="btn btn-outline-primary btn-lg px-5">
+
+        <i class="fa-solid fa-arrow-left me-2"></i>
+
+        Back to Jobs
+
+    </a>
+
+    <button
+            type="submit"
+            class="btn btn-primary btn-lg px-5 apply-submit-btn">
+
+        <i class="fa-solid fa-paper-plane me-2"></i>
+
+        Submit Application
+
+    </button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</body>
+
+</html>

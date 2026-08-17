@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::main})}">
+
+<body>
+
+	<main>
+
+		<!--=============================
+        HERO SECTION
+==============================-->
+
+		<section class="join-hero">
+
+			<div class="container">
+
+				<div class="row align-items-center gy-5">
+
+					<!-- LEFT -->
+
+					<div class="col-lg-5">
+
+						<div class="hero-content">
+
+							<span class="hero-badge"> <i class="bi bi-briefcase-fill"></i>
+
+								Careers at HR Synergy
+
+							</span>
+
+							<h1>Join Our Amazing Team</h1>
+
+							<p>Build your career with HR Synergy. We are looking for
+								passionate, talented, and innovative people who want to make an
+								impact.</p>
+
+							<div class="hero-buttons">
+
+								<a th:href="@{/jobs}" class="btn hero-btn"> <i
+									class="bi bi-search"></i> View Jobs
+
+		</a> <a th:href="@{/registration}" class="btn hero-btn-outline">
+
+			<i class="bi bi-person-plus"></i> Register Now
+
+								</a>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<!-- RIGHT -->
+
+					<div class="col-lg-7">
+
+						<div class="hero-image-box">
+							<img th:src="@{/images/corporate.jpeg}"
+								class="img-fluid hero-image" alt="Join HR Synergy">
+
+							<!-- Floating Card -->
+
+							<div class="floating-card top-card">
+
+								<i class="fa-solid fa-chart-line"></i> Career Growth
+
+							</div>
+
+							<div class="floating-card bottom-card">
+
+								<i class="bi bi-people-fill"></i> Team Culture
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+		<!--=========================
+WHY JOIN US
+==========================-->
+
+		<section class="why-join">
+
+			<div class="container">
+
+				<div class="section-title">
+
+					<span> WHY JOIN US </span>
+
+					<h2>Grow your career with confidence</h2>
+
+				</div>
+
+				<div class="row g-4">
+
+					<div class="col-lg-4">
+
+						<div class="join-card">
+
+							<i class="bi bi-graph-up-arrow"></i>
+
+							<h4>Career Growth</h4>
+
+							<p>Clear growth opportunities with continuous mentorship.</p>
+
+						</div>
+
+					</div>
+
+					<div class="col-lg-4">
+
+						<div class="join-card">
+
+							<i class="bi bi-mortarboard-fill"></i>
+
+							<h4>Learning Opportunities</h4>
+
+							<p>Improve your skills with training and real projects.</p>
+
+						</div>
+
+					</div>
+
+					<div class="col-lg-4">
+
+						<div class="join-card">
+
+							<i class="bi bi-house-door-fill"></i>
+
+							<h4>Flexible Working</h4>
+
+							<p>Balanced work environment with productivity focus.</p>
+
+						</div>
+
+					</div>
+
+					<div class="col-lg-4">
+
+						<div class="join-card">
+
+							<i class="bi bi-people-fill"></i>
+
+							<h4>Friendly Environment</h4>
+
+							<p>Collaborative and supportive professional culture.</p>
+
+						</div>
+
+					</div>
+
+					<div class="col-lg-4">
+
+						<div class="join-card">
+
+							<i class="bi bi-cash-stack"></i>
+
+							<h4>Competitive Salary</h4>
+
+							<p>Fair compensation based on role and performance.</p>
+
+						</div>
+
+					</div>
+
+					<div class="col-lg-4">
+
+						<div class="join-card">
+
+							<i class="bi bi-award-fill"></i>
+
+							<h4>Recognition & Rewards</h4>
+
+							<p>Your hard work and achievements are appreciated.</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+			<section class="current-jobs">
+
+				<div class="container">
+
+					<div class="section-title">
+
+						<span> OPEN POSITIONS </span>
+
+						<h2>
+
+							Current Job Openings
+
+							<!-- CURRENT JOBS -->
+							<div class="row g-3  justify-content-center mt-5">
+
+								<!-- JOB 1 -->
+
+								<div class="col-lg-4 col-md-6">
+
+									<div class="job-card">
+
+										<div class="job-type">Full Time</div>
+
+										<h3>Java Developer</h3>
+
+										<div class="job-info">
+
+											<span> <i class="bi bi-geo-alt-fill"></i> Noida
+
+											</span> <span> <i class="bi bi-cash-stack"></i> ₹8 LPA
+
+											</span>
+
+										</div>
+
+										<p>Looking for Java & Spring Boot developers with strong
+											problem solving skills.</p>
+
+										<a th:href="@{/registration}" class="apply-btn"> Apply Now
+										</a>
+
+									</div>
+
+								</div>
+
+								<!-- JOB 2 -->
+
+								<div class="col-lg-4 col-md-6">
+
+									<div class="job-card">
+
+										<div class="job-type">Hybrid</div>
+
+										<h3>Frontend Developer</h3>
+
+										<div class="job-info">
+
+											<span> <i class="bi bi-geo-alt-fill"></i> Gurugram
+
+											</span> <span> <i class="bi bi-cash-stack"></i> ₹7 LPA
+
+											</span>
+
+										</div>
+
+										<p>React, JavaScript and UI/UX experience preferred.</p>
+
+										<a th:href="@{/registration}" class="apply-btn"> Apply Now
+										</a>
+
+									</div>
+
+								</div>
+
+								<!-- JOB 3 -->
+
+								<div class="col-lg-4 col-md-6">
+
+									<div class="job-card">
+
+										<div class="job-type">Internship</div>
+
+										<h3>Software Intern</h3>
+
+										<div class="job-info">
+
+											<span> <i class="bi bi-geo-alt-fill"></i> Lucknow
+
+											</span> <span> <i class="bi bi-cash-stack"></i> ₹25K / Month
+
+											</span>
+
+										</div>
+
+										<p>Perfect opportunity for freshers to gain real industry
+											experience.</p>
+
+										<a th:href="@{/registration}" class="apply-btn"> Apply Now
+										</a>
+
+									</div>
+
+								</div>
+
+							</div>
+			</section>
+
+			<section class="hiring-process">
+
+				<div class="container">
+
+					<div class="section-title">
+
+						<span> HIRING PROCESS </span>
+
+						<h2>Simple and transparent recruitment</h2>
+
+					</div>
+
+					<div class="process-wrapper">
+
+						<div class="process-card">
+
+							<div class="step">01</div>
+
+							<i class="bi bi-file-earmark-arrow-up-fill"></i>
+
+							<h5>Apply Online</h5>
+
+						</div>
+
+						<div class="process-card">
+
+							<div class="step">02</div>
+
+							<i class="bi bi-file-earmark-person-fill"></i>
+
+							<h5>Resume Screening</h5>
+
+						</div>
+
+						<div class="process-card">
+
+							<div class="step">03</div>
+
+							<i class="bi bi-laptop"></i>
+
+							<h5>Technical Interview</h5>
+
+						</div>
+
+						<div class="process-card">
+
+							<div class="step">04</div>
+
+							<i class="bi bi-people-fill"></i>
+
+							<h5>HR Interview</h5>
+
+						</div>
+
+						<div class="process-card">
+
+							<div class="step">05</div>
+
+							<i class="bi bi-patch-check-fill"></i>
+
+							<h5>Offer Letter</h5>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+		<section class="benefits">
+
+			<div class="container">
+
+				<div class="section-title">
+
+					<span> BENEFITS </span>
+
+					<h2>Employee benefits designed for you</h2>
+
+				</div>
+
+				<div class="row g-4">
+
+					<div class="col-lg-3 col-md-6">
+
+						<div class="benefit-card">
+
+							<i class="fa-solid fa-scale-balanced"></i>
+
+							<h5>Work-Life Balance</h5>
+
+						</div>
+
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+
+						<div class="benefit-card">
+
+							<i class="bi bi-mortarboard-fill"></i>
+
+							<h5>Career Development</h5>
+
+						</div>
+
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+
+						<div class="benefit-card">
+
+							<i class="bi bi-heart-pulse-fill"></i>
+
+							<h5>Medical Insurance</h5>
+
+						</div>
+
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+
+						<div class="benefit-card">
+
+							<i class="bi bi-airplane-fill"></i>
+
+							<h5>Paid Leave</h5>
+
+						</div>
+
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+
+						<div class="benefit-card">
+
+							<i class="bi bi-journal-bookmark-fill"></i>
+
+							<h5>Training Programs</h5>
+
+						</div>
+
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+
+						<div class="benefit-card">
+
+							<i class="bi bi-gift-fill"></i>
+
+							<h5>Performance Bonus</h5>
+
+						</div>
+
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+
+						<div class="benefit-card">
+
+							<i class="bi bi-house-door-fill"></i>
+
+							<h5>Remote Work</h5>
+
+						</div>
+
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+
+						<div class="benefit-card">
+
+							<i class="bi bi-calendar-event-fill"></i>
+
+							<h5>Annual Events</h5>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+		<!--====================================
+            TESTIMONIALS
+=====================================-->
+
+		<section class="testimonials">
+
+			<div class="container">
+
+				<div class="section-title">
+
+					<span>TESTIMONIALS</span>
+
+					<h2>What Our Employees Say</h2>
+
+				</div>
+
+				<div class="row g-4">
+
+					<div class="col-lg-4">
+
+						<div class="testimonial-card">
+
+							<div class="quote">
+
+								<i class="bi bi-quote"></i>
+
+							</div>
+
+							<p>HR Synergy provided me an excellent learning environment
+								and helped me grow professionally.</p>
+
+							<div class="employee">
+
+
+
+								<div>
+
+									<h5>Anurag Maurya</h5>
+
+									<span>Java Developer</span>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="col-lg-4">
+
+						<div class="testimonial-card">
+
+							<div class="quote">
+
+								<i class="bi bi-quote"></i>
+
+							</div>
+
+							<p>The work culture is amazing and every project helped
+								improve my technical skills.</p>
+
+							<div class="employee">
+
+
+
+								<div>
+
+									<h5>Rahul Sharma</h5>
+
+									<span>Frontend Developer</span>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="col-lg-4">
+
+						<div class="testimonial-card">
+
+							<div class="quote">
+
+								<i class="bi bi-quote"></i>
+
+							</div>
+
+							<p>Friendly environment, supportive mentors and excellent
+								career opportunities.</p>
+
+							<div class="employee">
+
+
+
+								<div>
+
+									<h5>Priya Singh</h5>
+
+									<span>HR Executive</span>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+		<section class="statistics">
+
+			<div class="container">
+
+				<div class="row text-center">
+
+					<div class="col-lg-3 col-6">
+
+						<h2>100+</h2>
+
+						<p>Employees</p>
+
+					</div>
+
+					<div class="col-lg-3 col-6">
+
+						<h2>25+</h2>
+
+						<p>Departments</p>
+
+					</div>
+
+					<div class="col-lg-3 col-6">
+
+						<h2>500+</h2>
+
+						<p>Projects</p>
+
+					</div>
+
+					<div class="col-lg-3 col-6">
+
+						<h2>98%</h2>
+
+						<p>Employee Satisfaction</p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+		<section class="statistics">
+
+			<div class="container">
+
+				<div class="row text-center">
+
+					<div class="col-lg-3 col-6">
+
+						<h2>100+</h2>
+
+						<p>Employees</p>
+
+					</div>
+
+					<div class="col-lg-3 col-6">
+
+						<h2>25+</h2>
+
+						<p>Departments</p>
+
+					</div>
+
+					<div class="col-lg-3 col-6">
+
+						<h2>500+</h2>
+
+						<p>Projects</p>
+
+					</div>
+
+					<div class="col-lg-3 col-6">
+
+						<h2>98%</h2>
+
+						<p>Employee Satisfaction</p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+		<section class="join-banner">
+
+			<div class="container">
+
+				<div class="banner-content">
+
+					<h2>Ready to Build Your Career?</h2>
+
+					<p>Become a part of HR Synergy and work with an innovative,
+						passionate and supportive team.</p>
+
+					<div class="banner-buttons">
+
+						<a th:href="@{/registration}" class="btn banner-btn"> Register
+							Now </a> <a th:href="@{/jobs}" class="btn banner-btn-outline">
+
+							Browse Jobs </a>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+		<section class="faq-section">
+
+			<div class="container">
+
+				<div class="section-title">
+
+					<span> FAQ </span>
+
+					<h2>Frequently Asked Questions</h2>
+
+				</div>
+
+				<div class="accordion" id="faq">
+
+					<div class="accordion-item">
+
+						<h2 class="accordion-header">
+
+							<button class="accordion-button" data-bs-toggle="collapse"
+								data-bs-target="#q1">Who can apply?</button>
+
+						</h2>
+
+						<div id="q1" class="accordion-collapse collapse show"
+							data-bs-parent="#faq">
+
+							<div class="accordion-body">Students, Freshers and
+								Experienced professionals can apply.</div>
+
+						</div>
+
+					</div>
+
+					<div class="accordion-item">
+
+						<h2 class="accordion-header">
+
+							<button class="accordion-button collapsed"
+								data-bs-toggle="collapse" data-bs-target="#q2">Is
+								remote work available?</button>
+
+						</h2>
+
+						<div id="q2" class="accordion-collapse collapse"
+							data-bs-parent="#faq">
+
+							<div class="accordion-body">Yes. Selected positions support
+								hybrid and remote working.</div>
+
+						</div>
+
+					</div>
+
+					<div class="accordion-item">
+
+						<h2 class="accordion-header">
+
+							<button class="accordion-button collapsed"
+								data-bs-toggle="collapse" data-bs-target="#q3">How long
+								is the hiring process?</button>
+
+						</h2>
+
+						<div id="q3" class="accordion-collapse collapse"
+							data-bs-parent="#faq">
+
+							<div class="accordion-body">Usually between one and two
+								weeks.</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+		<section class="contact-hr">
+
+			<div class="container">
+
+				<div class="contact-card">
+
+					<h2>Still Have Questions?</h2>
+
+					<p>Our HR team is always ready to help you.</p>
+
+					<a th:href="@{/contactus}" class="btn contact-btn"> Contact HR
+
+					</a>
+
+				</div>
+
+			</div>
+
+		</section>
+
+	</main>
+
+</body>
+
+</html>

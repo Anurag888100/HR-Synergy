@@ -1,0 +1,36 @@
+<html lang="en" th:replace="~{admin/adminbase :: layout(~{::main})}">
+<body>
+
+<main>
+
+<h1>Complaints</h1>
+<hr>
+
+<table class="table table-bordered" style="margin:auto;width:70%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Contact No</th>
+            <th>Subject</th>
+            <th>Complaint</th>
+            <th>Posted Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr th:each="c : ${comp}">
+            <td th:text="${c.id}"></td>
+            <td th:text="${c.name}"></td>
+            <td th:text="${c.contactno}"></td>
+            <td th:text="${c.subject}"></td>
+            <td th:text="${c.responsetext}"></td>
+            <td th:text="${c.posteddate}"></td>
+        </tr>
+    </tbody>
+</table>
+
+</main>
+
+</body>
+</html>

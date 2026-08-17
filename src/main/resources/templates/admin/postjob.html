@@ -1,0 +1,60 @@
+<html lang="en" th:replace="~{admin/adminbase :: layout(~{::main})}">
+<body>
+ <main>
+ 	<h2 style="color:blue; text-align:center;">Post Job Details</h2>
+ 	<div th:if="${msg}">
+    <p th:text="${msg}" style="color:green; text-align:center;"></p>
+</div>
+ 	<hr/>
+ 	<form class="form-group" method="post" th:object="${jdto}">
+ 	<table class="table table-bordered">
+ 	<tr>
+ 	<td>Enter Job Title</td>
+ 	<td>
+ 	<input type="text" th:field="${jdto.title}" class="form-control" required/>
+ 	</td>
+ 	</tr>
+ 	<tr>
+ 	<td>Enter Description</td>
+ 	<td>
+ 	<textarea th:field="${jdto.description}" class="form-control" required></textarea>
+ 	</td>
+ 	</tr>
+ 	<tr>
+ 	<td>Enter Location</td>
+ 	<td>
+ 	<input type="text" th:field="${jdto.location}" class="form-control" required>
+ 	</td>
+ 	</tr>
+ 	<tr>
+ 	<td>Enter Salary</td>
+ 	<td>
+ 	<input type="number" th:field="${jdto.salary}" class="form-control" required/>
+ 	</td>
+ 	</tr>
+ 	<tr>
+ 	<td>Select Job Type</td>
+
+<td>
+<select class="form-control" th:field="${jdto.jobtype}">
+<option value="Full Time">Full Time</option>
+<option value="Part Time">Part Time</option>
+<option value="Internship">Internship</option>
+</select>
+</td> 	</tr>
+<tr>
+<td>Enter Last Date</td>
+<td> <input type ="date" th:field="${jdto.lastdate}" class="form-control" required/>
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td><button type="submit" th:field="${jdto.title}" class="btn btn-success" required>Post Job</button>
+</td>
+</tr>
+</table>
+ 	</form>
+ </main>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::main})}">
+
+<body>
+
+	<main>
+
+		<section class="registration-section">
+
+			<div class="container-fluid p-0">
+
+				<div class="row g-0">
+
+					<!-- =====================================================
+                            LEFT PANEL
+            ====================================================== -->
+
+					<div class="col-lg-5 registration-left">
+
+						<div class="overlay"></div>
+
+						<div class="left-content">
+
+							<span class="career-badge"> <i class="bi bi-people-fill"></i>
+
+								HR Synergy Careers
+
+							</span>
+
+							<h1>Join HR Synergy</h1>
+
+							<p>Start your professional journey with HR Synergy. Register
+								today to explore exciting career opportunities, apply for jobs
+								and build your future with us.</p>
+
+							<div class="left-features">
+
+								<div class="feature-pill">
+
+									<i class="bi bi-graph-up-arrow"></i> Career Growth
+
+								</div>
+
+								<div class="feature-pill">
+
+									<i class="bi bi-people-fill"></i> Professional Team
+
+								</div>
+
+								<div class="feature-pill">
+
+									<i class="bi bi-mortarboard-fill"></i> Learning Opportunities
+
+								</div>
+
+								<div class="feature-pill">
+
+									<i class="bi bi-building-fill"></i> Modern Workplace
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<!-- =====================================================
+                            RIGHT PANEL
+            ====================================================== -->
+
+					<div class="col-lg-7 registration-right">
+
+						<div class="registration-card">
+
+							<div class="register-icon">
+
+								<i class="bi bi-person"></i>
+							</div>
+
+							<h2>Candidate Registration</h2>
+
+							<p>Create your candidate account and become part of HR
+								Synergy.</p>
+
+
+
+							<div th:if="${msg}" class="alert alert-info text-center">
+								<span th:text="${msg}"></span>
+							</div>
+							<form th:action="@{/registration}" method="post"
+								th:object="${udto}">
+
+								<div class="row">
+
+									<!-- NAME -->
+
+									<div class="col-md-6">
+
+										<label>Name</label>
+
+										<div class="input-box">
+
+											<input type="text" th:field="*{name}" placeholder="Full Name"
+												required>
+
+										</div>
+
+									</div>
+
+									<!-- GENDER -->
+
+									<div class="col-md-6">
+
+										<label>Gender</label>
+
+										<div class="input-box">
+
+											<select th:field="*{gender}" required>
+
+												<option value="">Select Gender</option>
+
+												<option value="Male">Male</option>
+
+												<option value="Female">Female</option>
+
+											</select>
+
+										</div>
+
+									</div>
+
+									<!-- EMAIL -->
+
+									<div class="col-md-6">
+
+										<label>Email Address</label>
+
+										<div class="input-box">
+
+											<input type="email" th:field="*{emailaddress}"
+												placeholder="Email Address" required>
+
+										</div>
+
+									</div>
+
+									<!-- PASSWORD -->
+
+									<div class="col-md-6">
+
+										<label>Password</label>
+
+										<div class="input-box">
+
+											<input type="password" th:field="*{password}"
+												placeholder="Password" required>
+
+										</div>
+
+									</div>
+									<!-- CONTACT NUMBER -->
+
+									<div class="col-md-6">
+
+										<label>Contact Number</label>
+
+										<div class="input-box">
+
+											<input type="text" th:field="*{contactno}"
+												placeholder="Contact Number" maxlength="10" required>
+
+										</div>
+
+									</div>
+
+									<!-- QUALIFICATION -->
+
+									<div class="col-md-6">
+
+										<label>Qualification</label>
+
+										<div class="input-box">
+
+											<input type="text" th:field="*{qualification}"
+												placeholder="Qualification" required>
+
+										</div>
+
+									</div>
+
+									<!-- EXPERIENCE -->
+
+									<div class="col-md-6">
+
+										<label>Experience</label>
+
+										<div class="input-box">
+
+											<select th:field="*{experience}" required>
+
+												<option value="">Select Experience</option>
+
+												<option value="Fresher">Fresher</option>
+
+												<option value="1 Year">1 Year</option>
+
+												<option value="2 Years">2 Years</option>
+
+												<option value="3-5 Years">3-5 Years</option>
+
+												<option value="5+ Years">5+ Years</option>
+
+											</select>
+
+										</div>
+
+									</div>
+
+									<!-- KEY SKILLS -->
+
+									<div class="col-12">
+
+										<label>Key Skills</label>
+
+										<div class="textarea-box">
+
+
+
+											<textarea rows="3" th:field="*{keyskill}"
+												placeholder="Java, Spring Boot, SQL, HTML, CSS..." required></textarea>
+
+										</div>
+
+									</div>
+
+									<!-- ADDRESS -->
+
+									<div class="col-12">
+
+										<label>Address</label>
+
+										<div class="textarea-box">
+
+
+
+											<textarea rows="3" th:field="*{address}"
+												placeholder="Complete Address" required></textarea>
+
+										</div>
+
+									</div>
+
+								</div>
+
+								<!-- SECURITY MESSAGE -->
+
+								<div class="security-box">
+
+									</i> Your personal information is securely protected.
+
+								</div>
+
+								<!-- BUTTONS -->
+
+								<div class="button-group">
+
+									<button type="submit" class="btn-register">
+
+										<i class="bi bi-person-plus-fill me-2"></i> Register
+
+									</button>
+
+									<a th:href="@{/login}" class="btn-login"> <i
+										class="bi bi-box-arrow-in-right me-2"></i> Login
+
+									</a>
+
+								</div>
+
+							</form>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+		<!-- =====================================================
+                WHY REGISTER
+====================================================== -->
+
+		<section class="why-register-section">
+
+			<div class="container">
+
+				<div class="text-center mb-5">
+
+					<span class="section-badge"> WHY CHOOSE US </span>
+
+					<h2 class="section-title">Why Register With HR Synergy?</h2>
+
+					<p class="section-subtitle">Discover powerful features that
+						help you find jobs faster and build your professional career.</p>
+
+				</div>
+
+				<div class="row g-4">
+
+					<!-- CARD 1 -->
+
+					<div class="col-lg-4 col-md-6">
+
+						<div class="feature-card">
+
+							<div class="feature-icon">
+
+								<i class="bi bi-briefcase-fill"></i>
+
+							</div>
+
+							<h4>Latest Job Opportunities</h4>
+
+							<p>Browse hundreds of verified job openings posted by trusted
+								organizations.</p>
+
+						</div>
+
+					</div>
+
+					<!-- CARD 2 -->
+
+					<div class="col-lg-4 col-md-6">
+
+						<div class="feature-card">
+
+							<div class="feature-icon">
+
+								<i class="bi bi-send-check-fill"></i>
+
+							</div>
+
+							<h4>Easy Job Applications</h4>
+
+							<p>Apply for jobs in just a few clicks using your registered
+								profile.</p>
+
+						</div>
+
+					</div>
+
+					<!-- CARD 3 -->
+
+					<div class="col-lg-4 col-md-6">
+
+						<div class="feature-card">
+
+							<div class="feature-icon">
+
+								<i class="bi bi-bar-chart-fill"></i>
+
+							</div>
+
+							<h4>Track Applications</h4>
+
+							<p>Monitor every stage of your application, from submission
+								to selection.</p>
+
+						</div>
+
+					</div>
+
+					<!-- CARD 4 -->
+
+					<div class="col-lg-4 col-md-6">
+
+						<div class="feature-card">
+
+							<div class="feature-icon">
+
+								<i class="bi bi-shield-lock-fill"></i>
+
+							</div>
+
+							<h4>Secure Candidate Profile</h4>
+
+							<p>Your personal information remains protected with secure
+								authentication.</p>
+
+						</div>
+
+					</div>
+
+					<!-- CARD 5 -->
+
+					<div class="col-lg-4 col-md-6">
+
+						<div class="feature-card">
+
+							<div class="feature-icon">
+
+								<i class="bi bi-bell-fill"></i>
+
+							</div>
+
+							<h4>Interview Notifications</h4>
+
+							<p>Receive updates about interview schedules and recruitment
+								progress.</p>
+
+						</div>
+
+					</div>
+
+					<!-- CARD 6 -->
+
+					<div class="col-lg-4 col-md-6">
+
+						<div class="feature-card">
+
+							<div class="feature-icon">
+
+								<i class="bi bi-graph-up-arrow"></i>
+
+							</div>
+
+							<h4>Career Development</h4>
+
+							<p>Build your profile, improve your skills and grow your
+								professional career.</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+		<script th:if="${msg}">
+window.onload=function(){
+
+    showPopup(
+        "Registration Successful",
+        "[[${msg}]]",
+        "/login"
+    );
+
+}
+</script>
+	</main>
+</body>
+</html>

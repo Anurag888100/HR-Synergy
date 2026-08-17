@@ -1,0 +1,38 @@
+<html lang="en" th:replace="~{user/userbase :: layout(~{::main})}">
+<body>
+ <main>
+ 	<h1 style ="color:blue; text-aling:center;">View Your Profile</h1>
+ 	<hr/>
+ 	<table class="table table-bordered" style="width:80%;margin:auto;">
+ 	<tr>
+ 	<td>Name</td>
+ 	<td th:text="${user.name}"></td>
+ 	</tr>
+ 	<tr>
+ 	<td>Contact no</td>
+ 	<td th:text="${user.contactno}"></td>
+ 	</tr>
+ 	<tr>
+ 	<td>Email Address</td>
+ 	<td th:text="${user.emailaddress}"></td>
+ 	</tr>
+ 	<tr>
+ 	<td>Qualification</td>
+ 	<td th:text="${user.qualification}"></td>
+ 	</tr>
+ 	<tr>
+ 	<td>Experience</td>
+ 	<td th:text="${user.experience}"></td>
+ 	</tr>
+ 	<tr>
+ 	<td>Key Skill</td>
+ 	<td th:text="${user.keyskills}"></td>
+ 	</tr>
+ 	<tr>
+ 	<td>Address</td>
+ 	<td th:text="${user.address}"></td>
+ 	</tr>
+ 	</table>
+ </main>
+</body>
+</html>

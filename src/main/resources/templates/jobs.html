@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+	th:replace="~{base::layout(~{::main})}">
+
+<body>
+
+	<main>
+
+		<div class="jobs-page">
+
+			<section class="jobs-hero">
+
+				<div class="container">
+
+					<div class="row align-items-center">
+
+						<!-- LEFT -->
+
+						<div class="col-lg-6">
+
+							<span class="hero-badge"> <i class="bi bi-briefcase-fill"></i>
+								HR SYNERGY CAREERS
+							</span>
+
+							<h1>
+								Find Your <span>Dream Job</span>
+							</h1>
+
+							<p>Explore exciting career opportunities and become part of
+								HR Synergy. Apply for your dream job today.</p>
+
+							<div class="hero-buttons">
+
+								<a th:href="@{/jobs}" class="btn-view-jobs"> <i
+									class="bi bi-search me-2"></i> View Open Positions
+
+								</a> <a th:href="@{/registration}" class="btn-register"> <i
+									class="bi bi-person-plus-fill me-2"></i> Register Now
+
+								</a>
+
+							</div>
+
+						</div>
+
+						<!-- RIGHT -->
+
+						<div class="col-lg-6 text-center">
+
+							<img
+								th:src="@{/images/WhatsApp Image 2026-07-24 at 18.13.52.jpeg}"
+								class="img-fluid hero-image" alt="Jobs">
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+			<!-- =======================================================
+                        STATS
+======================================================== -->
+
+			<section class="job-stats">
+
+				<div class="container">
+
+					<div class="row g-4">
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="stat-card">
+
+								<div class="stat-icon blue">
+
+									<i class="bi bi-briefcase-fill"></i>
+
+								</div>
+
+								<h2>120+</h2>
+
+								<p>Total Jobs Available</p>
+
+							</div>
+
+						</div>
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="stat-card">
+
+								<div class="stat-icon orange">
+
+									<i class="bi bi-people-fill"></i>
+
+								</div>
+
+								<h2>63</h2>
+
+								<p>Active Vacancies</p>
+
+							</div>
+
+						</div>
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="stat-card">
+
+								<div class="stat-icon green">
+
+									<i class="bi bi-building"></i>
+
+								</div>
+
+								<h2>8</h2>
+
+								<p>Departments Hiring</p>
+
+							</div>
+
+						</div>
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="stat-card">
+
+								<div class="stat-icon purple">
+
+									<i class="bi bi-stars"></i>
+
+								</div>
+
+								<h2>Yes</h2>
+
+								<p>Freshers Welcome</p>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+			<!-- =======================================================
+                    SEARCH BAR
+======================================================== -->
+
+			<section class="search-section">
+
+				<div class="container">
+
+					<div class="search-box">
+
+						<div class="row g-3">
+
+							<div class="col-lg-5">
+
+								<input type="text" class="form-control"
+									placeholder="Search jobs by profile or qualification...">
+
+							</div>
+
+							<div class="col-lg-2">
+
+								<select class="form-select">
+
+									<option>Department</option>
+
+									<option>Development</option>
+
+									<option>HR</option>
+
+									<option>Testing</option>
+
+								</select>
+
+							</div>
+
+							<div class="col-lg-2">
+
+								<select class="form-select">
+
+									<option>Experience</option>
+
+									<option>Fresher</option>
+
+									<option>1 Year</option>
+
+									<option>2 Years</option>
+
+									<option>3+ Years</option>
+
+								</select>
+
+							</div>
+
+							<div class="col-lg-2">
+
+								<select class="form-select">
+
+									<option>Qualification</option>
+
+									<option>B.Tech</option>
+
+									<option>BCA</option>
+
+									<option>MCA</option>
+
+								</select>
+
+							</div>
+
+							<div class="col-lg-1">
+
+								<button class="btn-search">
+
+									<i class="bi bi-search"></i>
+
+								</button>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+			<!-- =======================================================
+            CURRENT JOB OPENINGS
+======================================================== -->
+			<section id="job-list" class="job-listing-section">
+
+				<div class="container">
+
+					<div class="section-heading text-center">
+
+						<span class="section-badge"> OPEN POSITIONS </span>
+
+						<h2>Current Job Openings</h2>
+
+						<p>Browse our latest opportunities and apply for the role that
+							fits you best.</p>
+
+					</div>
+
+					<div class="row g-4">
+
+						<div class="col-12" th:if="${#lists.isEmpty(jobs)}">
+
+							<div class="alert alert-warning text-center">No Jobs
+								Available</div>
+
+						</div>
+
+						<div class="col-lg-4 col-md-6" th:each="job : ${jobs}">
+
+							<div class="job-card">
+
+								<div class="job-header">
+
+									<div class="job-icon">
+										<i class="bi bi-briefcase-fill"></i>
+									</div>
+
+									<div>
+
+										<h4 th:text="${job.title}"></h4>
+
+										<span>HR Synergy</span>
+
+									</div>
+
+								</div>
+
+								<ul class="job-details">
+
+									<li><i class="bi bi-geo-alt-fill"></i> <strong
+										th:text="${job.location}"></strong></li>
+
+									<li><i class="bi bi-cash-stack"></i> ₹ <strong
+										th:text="${job.salary}"></strong></li>
+
+									<li><i class="bi bi-briefcase-fill"></i> <strong
+										th:text="${job.jobtype}"></strong></li>
+
+									<li><i class="bi bi-calendar-event-fill"></i> Last Date :
+										<strong th:text="${job.lastdate}"></strong></li>
+
+								</ul>
+
+								<div
+									th:if="${appliedJobs != null and #lists.contains(appliedJobs, job.id)}">
+
+									<button class="apply-btn"
+										style="background: #198754; cursor: not-allowed;" disabled>
+
+										<i class="fa-solid fa-circle-check me-2"></i> Already Applied
+
+									</button>
+
+								</div>
+
+								<div
+									th:unless="${appliedJobs != null and #lists.contains(appliedJobs, job.id)}">
+
+									<a th:href="@{/applyjob(id=${job.id})}" class="apply-btn">
+
+										<i class="fa-solid fa-paper-plane me-2"></i> Apply Now
+
+									</a>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</section>
+			<!-- =======================================================
+                    WHY JOIN US
+======================================================= -->
+
+			<section class="why-join-section py-5">
+
+				<div class="container">
+
+					<div class="section-heading text-center mb-5">
+
+						<span class="section-badge"> WHY JOIN US </span>
+
+						<h2>Why Join HR Synergy?</h2>
+
+						<p>We invest in our people because they're the heart of
+							everything we build.</p>
+
+					</div>
+
+					<div class="row g-4">
+
+						<!-- Card 1 -->
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="feature-card">
+
+								<div class="feature-icon">
+									<i class="bi bi-graph-up-arrow"></i>
+								</div>
+
+								<h5>Career Growth</h5>
+
+								<p>Clear career paths to help you achieve your professional
+									goals.</p>
+
+							</div>
+
+						</div>
+
+						<!-- Card 2 -->
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="feature-card">
+
+								<div class="feature-icon">
+
+									<i class="bi bi-gift-fill"></i>
+
+								</div>
+
+								<h5>Learning Programs</h5>
+
+								<p>Continuous learning through training, workshops and
+									certifications.</p>
+
+							</div>
+
+						</div>
+
+						<!-- Card 3 -->
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="feature-card">
+
+								<div class="feature-icon">
+
+									<i class="bi bi-people-fill"></i>
+
+								</div>
+
+								<h5>Friendly Culture</h5>
+
+								<p>Inclusive workplace where everyone is respected.</p>
+
+							</div>
+
+						</div>
+
+						<!-- Card 4 -->
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="feature-card">
+
+								<div class="feature-icon">
+
+									<i class="bi bi-cash-stack"></i>
+
+								</div>
+
+								<h5>Competitive Salary</h5>
+
+								<p>Attractive salary with yearly performance reviews.</p>
+
+							</div>
+
+						</div>
+
+						<!-- Card 5 -->
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="feature-card">
+
+								<div class="feature-icon">
+
+									<i class="bi bi-house-door-fill"></i>
+
+								</div>
+
+								<h5>Flexible Work</h5>
+
+								<p>Hybrid work options for better work-life balance.</p>
+
+							</div>
+
+						</div>
+
+						<!-- Card 6 -->
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="feature-card">
+
+								<div class="feature-icon">
+
+									<i class="bi bi-award-fill"></i>
+
+								</div>
+
+								<h5>Recognition</h5>
+
+								<p>Rewards and appreciation for outstanding performance.</p>
+
+							</div>
+
+						</div>
+
+						<!-- Card 7 -->
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="feature-card">
+
+								<div class="feature-icon">
+
+									<i class="bi bi-laptop-fill"></i>
+
+								</div>
+
+								<h5>Training</h5>
+
+								<p>Structured onboarding and technical mentoring.</p>
+
+							</div>
+
+						</div>
+
+						<!-- Card 8 -->
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="feature-card">
+
+								<div class="feature-icon">
+
+									<i class="bi bi-rocket-fill"></i>
+
+								</div>
+
+								<h5>Promotion Opportunities</h5>
+
+								<p>Internal promotions based on talent and contribution.</p>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+			<!-- =======================================================
+                    HIRING PROCESS
+======================================================= -->
+
+			<section class="process-section py-5">
+
+				<div class="container">
+
+					<div class="section-heading text-center mb-5">
+
+						<span class="section-badge"> THE PROCESS </span>
+
+						<h2>Our Hiring Process</h2>
+
+						<p>A simple, transparent path from application to offer
+							letter.</p>
+
+					</div>
+
+					<div class="row text-center">
+
+						<div class="col">
+
+							<div class="process-step">
+
+								<div class="process-icon">
+
+									<i class="bi bi-file-earmark-text-fill"></i>
+
+								</div>
+
+								<h6>Apply</h6>
+
+								<small> Submit your application </small>
+
+							</div>
+
+						</div>
+
+						<div class="col">
+
+							<div class="process-step">
+
+								<div class="process-icon">
+
+									<i class="bi bi-search"></i>
+
+								</div>
+
+								<h6>Resume Screening</h6>
+
+								<small> HR reviews your profile </small>
+
+							</div>
+
+						</div>
+
+						<div class="col">
+
+							<div class="process-step">
+
+								<div class="process-icon">
+
+									<i class="bi bi-code-square"></i>
+
+								</div>
+
+								<h6>Technical Interview</h6>
+
+								<small> Skill assessment </small>
+
+							</div>
+
+						</div>
+
+						<div class="col">
+
+							<div class="process-step">
+
+								<div class="process-icon">
+
+									<i class="bi bi-chat-dots-fill"></i>
+
+								</div>
+
+								<h6>HR Discussion</h6>
+
+								<small> Culture fit discussion </small>
+
+							</div>
+
+						</div>
+
+						<div class="col">
+
+							<div class="process-step">
+
+								<div class="process-icon">
+
+									<i class="bi bi-patch-check-fill"></i>
+
+								</div>
+
+								<h6>Offer Letter</h6>
+
+								<small> Welcome aboard </small>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+			<!-- ======================================================
+                    EMPLOYEE BENEFITS
+====================================================== -->
+
+			<section class="benefits-section py-5">
+
+				<div class="container">
+
+					<div class="section-heading text-center mb-5">
+
+						<span class="section-badge"> BENEFITS </span>
+
+						<h2>Employee Benefits</h2>
+
+						<p>We care about our employees and provide benefits that help
+							them grow personally and professionally.</p>
+
+					</div>
+
+					<div class="row g-4">
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="feature-card">
+
+								<div class="feature-icon">
+
+									<i class="bi bi-heart-pulse-fill"></i>
+
+								</div>
+
+								<h5>Health Insurance</h5>
+
+							</div>
+
+						</div>
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="feature-card">
+
+								<div class="feature-icon">
+
+									<i class="bi bi-cash-stack"></i>
+
+								</div>
+
+								<h5>Paid Leave</h5>
+
+							</div>
+
+						</div>
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="feature-card">
+
+								<div class="feature-icon">
+
+									<i class="bi bi-trophy-fill"></i>
+
+								</div>
+
+								<h5>Performance Bonus</h5>
+
+							</div>
+
+						</div>
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="feature-card">
+
+								<div class="feature-icon">
+
+									<i class="bi bi-book-fill"></i>
+
+								</div>
+
+								<h5>Learning Opportunities</h5>
+
+							</div>
+
+						</div>
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="feature-card">
+
+								<div class="feature-icon">
+
+									<i class="fa-solid fa-scale-balanced"></i>
+
+								</div>
+
+								<h5>Work-Life Balance</h5>
+
+							</div>
+
+						</div>
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="feature-card">
+
+								<div class="feature-icon">
+
+									<i class="bi bi-calendar-event-fill"></i>
+
+								</div>
+
+								<h5>Annual Events</h5>
+
+							</div>
+
+						</div>
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="feature-card">
+
+								<div class="feature-icon">
+
+									<i class="bi bi-graph-up-arrow"></i>
+
+								</div>
+
+								<h5>Professional Growth</h5>
+
+							</div>
+
+						</div>
+
+						<div class="col-lg-3 col-md-6">
+
+							<div class="feature-card">
+
+								<div class="feature-icon">
+
+									<i class="bi bi-people-fill"></i>
+
+								</div>
+
+								<h5>Team Support</h5>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+			<!-- ======================================================
+                        CTA
+====================================================== -->
+
+			<section class="career-cta">
+
+				<div class="container">
+
+					<div class="cta-box text-center">
+
+						<h2>Ready to Start Your Career?</h2>
+
+						<p>Join our growing team today and build something great with
+							HR Synergy.</p>
+
+						<div class="hero-buttons justify-content-center">
+
+							<a th:href="@{/registration}" class="btn-view-jobs"> <i
+								class="bi bi-person-plus-fill me-2"></i> Register
+
+							</a> <a th:href="@{/contactus}" class="btn-register"> Contact HR
+
+							</a>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+			<!-- ======================================================
+                    CONTACT
+====================================================== -->
+
+			<section class="contact-info py-5">
+
+				<div class="container">
+
+					<div class="row g-4">
+
+						<div class="col-sm-3">
+
+							<div class="stat-card">
+
+								<div class="stat-icon blue">
+
+									<i class="bi bi-envelope-fill"></i>
+
+								</div>
+
+								<h5>Email</h5>
+
+								
+
+							</div>
+
+						</div>
+
+						<div class="col-sm-3">
+
+							<div class="stat-card">
+
+								<div class="stat-icon green">
+
+									<i class="bi bi-telephone-fill"></i>
+
+								</div>
+
+								<h5>Phone</h5>
+
+						
+
+							</div>
+
+						</div>
+
+						<div class="col-sm-3">
+
+							<div class="stat-card">
+
+								<div class="stat-icon orange">
+
+									<i class="bi bi-geo-alt-fill"></i>
+
+								</div>
+
+								<h5>Location</h5>
+
+							</div>
+
+						</div>
+
+						<div class="col-sm-3">
+
+							<div class="stat-card">
+
+								<div class="stat-icon purple">
+
+									<i class="bi bi-clock-fill"></i>
+
+								</div>
+
+								<h5>Working Hours</h5>
+
+							
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+			<!-- ======================================================
+                BOTTOM REGISTER BAR
+====================================================== -->
+
+			<section class="bottom-register py-5">
+
+				<div class="container">
+
+					<div class="search-box">
+
+						<div class="row align-items-center">
+
+							<div class="col-lg-8">
+
+								<h3 class="mb-2">Still Looking?</h3>
+
+								<p class="mb-0">Register your profile and we'll notify you
+									whenever a suitable vacancy is available.</p>
+
+							</div>
+
+							<div class="col-lg-4 text-end">
+
+								<a th:href="@{/registration}" class="btn-view-jobs me-2 mb-3">
+
+									Register </a> 
+									<a th:href="@{/contactus}" class="btn-register mt-3">
+
+									Contact HR </a>
+
+							</div>
+
+						</div>
+
+					</div>
+			</section>
+		</div>
+	</main>
+
+</body>
+
+</html>
